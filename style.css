@@ -930,6 +930,449 @@ a {
 
 
 
+/* =========================
+        PORTFOLIO CONTENT
+========================= */
+
+
+.portfolio {
+    padding: 30px;
+}
+
+
+/* Các nút lọc */
+
+.portfolio-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+
+    margin: 25px 0 30px;
+}
+
+.portfolio-filter {
+    padding: 0;
+
+    background-color: transparent;
+    border: 0;
+
+    color: #787878;
+    font-size: 12px;
+
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.portfolio-filter:hover,
+.portfolio-filter.active {
+    color: #ffc500;
+}
+
+
+/* Danh sách sản phẩm */
+
+.portfolio-list {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+
+/* Từng sản phẩm */
+
+.portfolio-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+
+    box-shadow: 0 0 48px rgba(4, 6, 4, 0.08);
+
+    overflow: hidden;
+
+    transition:
+        opacity 0.3s,
+        transform 0.3s;
+}
+
+.portfolio-card.hidden {
+    display: none;
+}
+
+
+/* Ảnh sản phẩm */
+
+.portfolio-image {
+    position: relative;
+
+    height: 180px;
+
+    overflow: hidden;
+}
+
+.portfolio-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.4s;
+}
+
+
+/* Lớp phủ khi hover */
+
+.portfolio-overlay {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(0, 0, 0, 0.25);
+
+    opacity: 0;
+
+    transition: opacity 0.3s;
+}
+
+.portfolio-card:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+.portfolio-card:hover .portfolio-image img {
+    transform: scale(1.08);
+}
+
+
+/* Icon màu vàng */
+
+.portfolio-icon {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #ffc500;
+    border-radius: 50%;
+
+    color: #ffffff;
+    font-size: 16px;
+
+    transform: translateY(15px);
+
+    transition: transform 0.3s;
+}
+
+.portfolio-icon i {
+    line-height: 1;
+}
+
+.portfolio-card:hover .portfolio-icon {
+    transform: translateY(0);
+}
+
+
+/* Tên và mô tả sản phẩm */
+
+.portfolio-information {
+    padding: 15px 20px 18px;
+}
+
+.portfolio-information h3 {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.portfolio-information p {
+    color: #989898;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+
+/* Nút No More Work*/
+
+/* Nút No More Works */
+
+.portfolio-load-more {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 30px;
+}
+
+.load-more-btn {
+    min-width: 194px;
+    min-height: 48px;
+
+    padding: 0 30px;
+
+    background-color: #ffc500;
+    border: 0;
+    border-radius: 50px;
+
+    color: #000000;
+    font-size: 16px;
+    font-weight: 500;
+
+    cursor: default;
+}
+
+
+/* =========================
+        PORTFOLIO POPUP
+========================= */
+
+
+.portfolio-clickable {
+    cursor: pointer;
+}
+
+
+/* CỬA SỔ LOADING */
+
+.portfolio-loading-modal {
+    position: fixed;
+    z-index: 10000;
+    inset: 0;
+
+    display: none;
+
+    background-color: #ffffff;
+}
+
+.portfolio-loading-modal.active {
+    display: block;
+}
+
+.portfolio-loading-header {
+    position: relative;
+
+    height: 130px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.04);
+}
+
+.portfolio-modal-close {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #ffffff;
+    border: 1px solid #eeeeee;
+    border-radius: 50%;
+
+    color: #555555;
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition:
+        color 0.3s,
+        transform 0.3s;
+}
+
+.portfolio-modal-close:hover {
+    color: #ffc500;
+
+    transform: rotate(90deg);
+}
+
+.portfolio-loading-count {
+    position: absolute;
+    right: 35px;
+
+    color: #cccccc;
+    font-size: 14px;
+}
+
+.portfolio-loading-body {
+    height: calc(100vh - 130px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.portfolio-loading-spinner {
+    position: relative;
+
+    width: 76px;
+    height: 76px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.portfolio-loading-spinner::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    border: 2px solid #eeeeee;
+    border-top-color: #ffc500;
+    border-right-color: #ffc500;
+    border-radius: 50%;
+
+    animation: portfolio-loading 0.8s linear infinite;
+}
+
+.portfolio-loading-spinner img {
+    width: 60px;
+    height: 60px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+}
+
+@keyframes portfolio-loading {
+
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* LIGHTBOX VIDEO VÀ ẢNH */
+
+.portfolio-lightbox {
+    position: fixed;
+    z-index: 10000;
+    inset: 0;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 50px 100px;
+
+    background-color: rgba(0, 0, 0, 0.82);
+}
+
+.portfolio-lightbox.active {
+    display: flex;
+}
+
+.portfolio-lightbox-content {
+    width: min(1420px, 90vw);
+    height: min(800px, 82vh);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.portfolio-lightbox-content iframe {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    background-color: #000000;
+    border: 0;
+}
+
+.portfolio-lightbox-content img {
+    display: block;
+
+    max-width: 100%;
+    max-height: 100%;
+
+    object-fit: contain;
+}
+
+.portfolio-lightbox-close {
+    position: absolute;
+    z-index: 1;
+    top: 20px;
+    right: 25px;
+
+    width: 45px;
+    height: 45px;
+
+    background-color: transparent;
+    border: 0;
+
+    color: #ffffff;
+    font-size: 25px;
+
+    cursor: pointer;
+
+    transition: transform 0.3s;
+}
+
+.portfolio-lightbox-close:hover {
+    transform: rotate(90deg);
+}
+
+.portfolio-lightbox-control {
+    position: absolute;
+    top: 50%;
+
+    width: 50px;
+    height: 70px;
+
+    background-color: rgba(0, 0, 0, 0.35);
+    border: 0;
+
+    color: #ffffff;
+    font-size: 25px;
+
+    cursor: pointer;
+
+    transform: translateY(-50%);
+
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.portfolio-lightbox-control:hover {
+    opacity: 1;
+}
+
+.portfolio-lightbox-previous {
+    left: 20px;
+}
+
+.portfolio-lightbox-next {
+    right: 20px;
+}
+
+.portfolio-lightbox-counter {
+    position: absolute;
+    right: 35px;
+    bottom: 20px;
+
+    color: #ffffff;
+    font-size: 14px;
+}
+
+
+/* KẾT THÚC PORTFOLIO */
+
+
+
 
 /* FOOTER */
 
