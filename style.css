@@ -4,6 +4,50 @@
     box-sizing: border-box;
 }
 
+
+/* ICON FLATICON */
+
+@font-face {
+    font-family: "Flaticon";
+
+    src: url("training/Flaticon.a838f312.woff") format("woff");
+
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+[class^="flaticon-"]::before,
+[class*=" flaticon-"]::before {
+    font-family: "Flaticon";
+
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    line-height: 1;
+
+    text-transform: none;
+}
+
+.flaticon-attach::before {
+    content: "\f103";
+}
+
+.flaticon-html::before {
+    content: "\f10f";
+}
+
+.flaticon-schedule::before {
+    content: "\f120";
+}
+
+.flaticon-vector::before {
+    content: "\f130";
+}
+
+
+
+
 html {
     min-height: 100%;
 }
@@ -364,7 +408,15 @@ a {
     box-shadow: 0 2px 92px rgba(0, 0, 0, 0.07);
 }
 
+/* TAB CONTENT */
 
+.tab-panel {
+    display: none;
+}
+
+.tab-panel.active {
+    display: block;
+}
 
 /* HOME CONTENT */
 
@@ -463,10 +515,21 @@ a {
     align-items: flex-start;
 }
 
-.service-icon i {
-    color: #000000;
+
+/* ICON FLATICON */
+
+.service-icon i::before {
+    display: block;
+
+    margin-left: 0;
+
+    color: #333333;
     font-size: 44px;
+    line-height: 1;
 }
+
+
+
 
 .service-card h3 {
     font-size: 14px;
@@ -479,6 +542,7 @@ a {
     font-size: 13px;
     line-height: 18px;
 }
+
 
 /* SKILLS */
 
@@ -574,6 +638,295 @@ a {
     width: 30%;
 }
 
+
+/* =========================
+        RESUME CONTENT
+========================= */
+
+
+/* WORKING AND EDUCATION HISTORY */
+
+.resume {
+    padding: 30px;
+}
+
+.resume>.section-title {
+    margin-bottom: 30px;
+}
+
+
+/* Chia lịch sử làm việc và học tập thành 2 cột */
+
+.resume-columns {
+    display: flex;
+}
+
+.history-column {
+    width: 50%;
+
+    padding-right: 30px;
+}
+
+.history-column+.history-column {
+    padding-right: 0;
+    padding-left: 30px;
+
+    border-left: 1px solid #efefef;
+}
+
+
+/* Tiêu đề của từng cột */
+
+.history-heading {
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 35px;
+}
+
+.history-icon {
+    flex: 0 0 53px;
+    width: 53px;
+    height: 53px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-right: 20px;
+
+    background-color: #ffc500;
+    border-radius: 50%;
+
+    color: #000000;
+    font-size: 18px;
+}
+
+.history-heading h2 {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+
+/* Đường thời gian */
+
+.timeline {
+    margin-left: 26px;
+
+    border-left: 2px solid #eeeeee;
+}
+
+.timeline li {
+    position: relative;
+
+    padding: 0 0 35px 36px;
+}
+
+.timeline li:last-child {
+    padding-bottom: 0;
+}
+
+.timeline li::before {
+    content: "";
+
+    position: absolute;
+    top: 5px;
+    left: -6px;
+
+    width: 8px;
+    height: 8px;
+
+    background-color: #ffffff;
+    border: 2px solid #ffc500;
+    border-radius: 50%;
+}
+
+.timeline h3 {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.timeline span {
+    color: #555555;
+    font-size: 12px;
+}
+
+.timeline p {
+    margin-top: 10px;
+
+    color: #989898;
+    font-size: 13px;
+    line-height: 18px;
+}
+
+
+/* CLIENTS */
+
+.clients {
+    padding: 45px 30px;
+
+    background-color: #fafafa;
+    border-top: 1px solid #efefef;
+    border-bottom: 1px solid #efefef;
+}
+
+.clients .section-title {
+    margin-bottom: 30px;
+}
+
+.client-list {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.client-card {
+    min-height: 113px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #ffffff;
+    border-radius: 8px;
+
+    box-shadow: 0 0 48px rgba(4, 6, 4, 0.08);
+
+    overflow: hidden;
+}
+
+.client-card img {
+    display: block;
+    width: 100%;
+}
+
+
+/* TESTIMONIALS */
+
+.testimonials {
+    padding: 60px 30px 30px;
+}
+
+.testimonials .section-title {
+    margin-bottom: 30px;
+}
+
+
+/* Khung bên ngoài dùng để ẩn các trang chưa hiển thị */
+
+.testimonial-slider {
+    width: 100%;
+
+    overflow: hidden;
+}
+
+
+/* Thanh chứa 3 trang */
+
+.testimonial-track {
+    display: flex;
+
+    transition: transform 0.5s ease;
+}
+
+
+/* Mỗi trang rộng bằng toàn bộ khung slider */
+
+.testimonial-page {
+    min-width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+
+/* Từng thẻ nhận xét */
+
+.testimonial-card {
+    padding: 20px;
+
+    background-color: #ffffff;
+    border-radius: 8px;
+
+    box-shadow: 0 0 48px rgba(4, 6, 4, 0.08);
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+}
+
+.testimonial-author img {
+    flex: 0 0 50px;
+    width: 50px;
+    height: 50px;
+
+    margin-right: 15px;
+
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.testimonial-information h3 {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+}
+
+.testimonial-information span {
+    color: #d0d0d0;
+    font-size: 12px;
+}
+
+.testimonial-line {
+    height: 1px;
+
+    margin: 15px 0;
+
+    background-color: #efefef;
+}
+
+.testimonial-card p {
+    color: #989898;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+
+/* Ba dấu chấm chuyển trang */
+
+.testimonial-dots {
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+
+    margin-top: 25px;
+}
+
+.testimonial-dot {
+    width: 10px;
+    height: 10px;
+
+    padding: 0;
+
+    background-color: #ffe9a5;
+    border: 0;
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    transition: background-color 0.3s;
+}
+
+.testimonial-dot.active {
+    background-color: #ffc500;
+}
+
+/* KẾT THÚC RESUME CONTENT */
 
 
 
