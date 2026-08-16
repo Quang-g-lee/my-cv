@@ -610,3 +610,39 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+
+/* =========================
+        BLOG
+========================= */
+
+
+const blogLoadMoreButton =
+    document.querySelector(".blog-load-more-btn");
+
+
+if (blogLoadMoreButton) {
+
+    blogLoadMoreButton.addEventListener("click", function () {
+
+        blogLoadMoreButton.textContent = "No More Posts";
+
+        blogLoadMoreButton.disabled = true;
+
+    });
+
+}
+
+
+/* NÚT LOAD MORE */
+
+if (blogLoadMoreButton) {
+
+    blogLoadMoreButton.addEventListener("click", function () {
+
+        blogLoadMoreButton.textContent = "No More Posts";
+
+        blogLoadMoreButton.disabled = true;
+
+    });
+
+}

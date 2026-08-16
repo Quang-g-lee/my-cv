@@ -1372,6 +1372,225 @@ a {
 /* KẾT THÚC PORTFOLIO */
 
 
+/* =========================
+        BLOG CONTENT
+========================= */
+
+
+/* Khoảng cách bên trong toàn bộ tab Blog */
+
+.blog {
+    padding: 30px;
+}
+
+
+/* Danh sách các bài viết */
+
+.blog-list {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+
+    margin-top: 25px;
+}
+
+
+/* Một card bài viết */
+
+.blog-card {
+    min-width: 0;
+
+    background-color: #ffffff;
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    box-shadow: 0 0 48px rgba(4, 6, 4, 0.08);
+
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s;
+}
+
+
+/* Card di chuyển lên khi đưa chuột vào */
+
+.blog-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 12px 45px rgba(4, 6, 4, 0.13);
+}
+
+
+/* Thẻ liên kết bao quanh card */
+
+.blog-link {
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* Khu vực chứa ảnh */
+
+.blog-image {
+    height: 185px;
+
+    overflow: hidden;
+}
+
+
+/* Ảnh bài viết */
+
+.blog-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.4s;
+}
+
+
+/* Phóng to ảnh khi đưa chuột vào card */
+
+.blog-card:hover .blog-image img {
+    transform: scale(1.06);
+}
+
+
+/* Nội dung phía dưới ảnh */
+
+.blog-information {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 18px 20px 20px;
+}
+
+
+/* Thể loại bài viết */
+
+.blog-category {
+    color: #ffc500;
+
+    font-size: 12px;
+    line-height: 18px;
+}
+
+
+/* Tiêu đề bài viết */
+
+.blog-information h3 {
+    margin-top: 2px;
+
+    color: #000000;
+
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 23px;
+}
+
+
+/* Mô tả bài viết */
+
+.blog-information p {
+    margin-top: 10px;
+
+    color: #989898;
+
+    font-size: 12px;
+    line-height: 18px;
+}
+
+
+/* Ngày đăng bài */
+
+.blog-information time {
+    display: block;
+
+    margin-top: auto;
+    padding-top: 14px;
+
+    color: #b4b4b4;
+
+    font-size: 11px;
+    line-height: 16px;
+}
+
+
+/* Khu vực chứa nút Load More */
+
+.blog-load-more {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 30px;
+}
+
+
+/* Nút Load More */
+
+.blog-load-more-btn {
+    min-width: 194px;
+    min-height: 48px;
+
+    padding: 0 30px;
+
+    background-color: #ffc500;
+    border: 0;
+    border-radius: 50px;
+
+    color: #000000;
+
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: background-color 0.3s;
+}
+
+
+/* Đổi màu nút khi đưa chuột vào */
+
+.blog-load-more-btn:hover {
+    background-color: #ffb100;
+}
+
+
+/* Khi nút bị vô hiệu hóa */
+
+.blog-load-more-btn:disabled {
+    background-color: #ffc500;
+
+    cursor: default;
+}
+
+
+/* KẾT THÚC BLOG */
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* FOOTER */

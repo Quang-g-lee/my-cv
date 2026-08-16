@@ -1,0 +1,815 @@
+/* HEADER TRANG CHI TIẾT */
+
+.blog-detail-header {
+    height: 88px;
+
+    display: flex;
+    align-items: stretch;
+
+    background-color: #ffffff;
+    border-radius: 7px;
+
+    box-shadow: 0 2px 92px rgba(0, 0, 0, 0.07);
+
+    overflow: hidden;
+}
+
+
+/* Nút Home màu vàng */
+
+.blog-home-button {
+    flex: 0 0 90px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #ffc500;
+
+    color: #000000;
+    font-size: 27px;
+
+    transition: background-color 0.3s;
+}
+
+.blog-home-button:hover {
+    background-color: #ffb100;
+}
+
+
+/* Nút quay lại trang Blog */
+
+.back-blog-link {
+    display: flex;
+    align-items: center;
+
+    padding: 0 25px;
+
+    color: #000000;
+    font-size: 16px;
+    font-weight: 700;
+
+    transition: color 0.3s;
+}
+
+.back-blog-link:hover {
+    color: #ffc500;
+}
+
+
+/* Điều chỉnh nút Hire Me trong trang Blog */
+
+/* Nút Hire Me */
+
+.blog-detail-header .hire-btn {
+    align-self: center;
+
+    margin-left: auto;
+    margin-right: 65px;
+
+    transform: none;
+}
+
+
+/* Khu vực chứa menu và social icon */
+
+.blog-social-area {
+    width: 170px;
+    min-height: 155px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    gap: 60px;
+
+    margin-left: auto;
+    margin-right: 50px;
+
+    color: #000000;
+
+    transform: none;
+}
+
+
+/* Icon menu nằm lệch về bên trái */
+
+.blog-menu-button {
+    align-self: flex-start;
+
+    margin-left: -25px;
+    padding: 0;
+
+    background-color: transparent;
+    border: 0;
+
+    color: #000000;
+    font-size: 19px;
+
+    cursor: pointer;
+}
+
+
+/* Hàng icon mạng xã hội */
+
+.blog-social-icons {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* Từng icon mạng xã hội */
+
+.blog-social-icons a {
+    width: 20px;
+    height: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #000000;
+    font-size: 16px;
+}
+
+
+/* Hiệu ứng hover */
+
+.blog-social-icons a:hover {
+    color: #ffc500;
+}
+
+
+/* =========================
+        BLOG DETAIL CONTENT
+========================= */
+
+
+/* Khung nội dung màu trắng */
+
+.blog-detail-content {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 2fr)
+        minmax(240px, 1fr);
+
+    gap: 38px;
+
+    padding: 55px 38px;
+
+    background-color: #ffffff;
+    border-radius: 7px;
+
+    box-shadow: 0 2px 92px rgba(0, 0, 0, 0.07);
+}
+
+
+/* =========================
+        BLOG ARTICLE
+========================= */
+
+
+.blog-post-article {
+    min-width: 0;
+}
+
+
+/* Ảnh lớn của bài viết */
+
+.blog-post-image {
+    width: 100%;
+    height: 435px;
+
+    border-radius: 7px;
+
+    overflow: hidden;
+}
+
+.blog-post-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* Nội dung bài viết */
+
+.blog-post-body {
+    padding: 28px 5px 10px;
+}
+
+
+/* Thể loại bài viết */
+
+.blog-post-category {
+    color: #ffc500;
+
+    font-size: 13px;
+    font-weight: 500;
+}
+
+
+/* Tiêu đề bài viết */
+
+.blog-post-body h1 {
+    margin-top: 6px;
+
+    color: #000000;
+
+    font-size: 27px;
+    font-weight: 700;
+    line-height: 36px;
+}
+
+
+/* Ngày đăng và tác giả */
+
+.blog-post-meta {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 22px;
+
+    margin-top: 12px;
+
+    color: #aaaaaa;
+    font-size: 12px;
+}
+
+.blog-post-meta span {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+}
+
+.blog-post-meta i {
+    color: #ffc500;
+}
+
+
+/* Các đoạn văn */
+
+.blog-post-body p {
+    margin-top: 22px;
+
+    color: #777777;
+
+    font-size: 13px;
+    line-height: 24px;
+}
+
+
+/* =========================
+        RIGHT SIDEBAR
+========================= */
+
+
+.blog-post-sidebar {
+    min-width: 0;
+
+    padding-left: 38px;
+
+    border-left: 1px solid #eeeeee;
+}
+
+
+/* Tiêu đề Categories và Related Posts */
+
+.blog-post-sidebar .section-title h2 {
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 28px;
+}
+
+.blog-post-sidebar .section-title span {
+    height: 8px;
+}
+
+
+/* =========================
+        CATEGORIES
+========================= */
+
+
+.blog-categories ul {
+    margin-top: 25px;
+}
+
+.blog-categories li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: 45px;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+.blog-categories li a {
+    color: #222222;
+
+    font-size: 14px;
+
+    transition:
+        color 0.3s,
+        padding-left 0.3s;
+}
+
+.blog-categories li a:hover {
+    padding-left: 5px;
+
+    color: #ffc500;
+}
+
+.blog-categories li > span {
+    color: #999999;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+        RELATED POSTS
+========================= */
+
+
+.related-posts {
+    margin-top: 68px;
+}
+
+
+/* Một bài viết liên quan */
+
+.related-post {
+    padding: 25px 0;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+
+/* Thể loại và ngày đăng */
+
+.related-post-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    gap: 9px;
+
+    margin-bottom: 6px;
+
+    font-size: 12px;
+}
+
+.related-post-meta span {
+    color: #ffc500;
+}
+
+.related-post-meta time {
+    color: #aaaaaa;
+}
+
+
+/* Tiêu đề bài viết liên quan */
+
+.related-post > a {
+    display: block;
+
+    color: #222222;
+
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+
+    transition: color 0.3s;
+}
+
+.related-post > a:hover {
+    color: #ffc500;
+}
+
+
+/* =========================
+        FOOTER
+========================= */
+
+
+/* Footer của trang Blog cách nội dung 30px */
+
+.blog-detail-page .site-footer {
+    margin-top: 30px;
+}
+/* HEADER TRANG CHI TIẾT */
+
+.blog-detail-header {
+    height: 88px;
+
+    display: flex;
+    align-items: stretch;
+
+    background-color: #ffffff;
+    border-radius: 7px;
+
+    box-shadow: 0 2px 92px rgba(0, 0, 0, 0.07);
+
+    overflow: hidden;
+}
+
+
+/* Nút Home màu vàng */
+
+.blog-home-button {
+    flex: 0 0 90px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #ffc500;
+
+    color: #000000;
+    font-size: 27px;
+
+    transition: background-color 0.3s;
+}
+
+.blog-home-button:hover {
+    background-color: #ffb100;
+}
+
+
+/* Nút quay lại trang Blog */
+
+.back-blog-link {
+    display: flex;
+    align-items: center;
+
+    padding: 0 25px;
+
+    color: #000000;
+    font-size: 16px;
+    font-weight: 700;
+
+    transition: color 0.3s;
+}
+
+.back-blog-link:hover {
+    color: #ffc500;
+}
+
+
+/* Điều chỉnh nút Hire Me trong trang Blog */
+
+.blog-detail-header .hire-btn {
+    align-self: center;
+
+    margin-left: auto;
+    margin-right: 25px;
+}
+
+
+/* =========================
+        SOCIAL AREA
+========================= */
+
+
+/* Khu vực trống dưới Header */
+
+.blog-social-area {
+    width: 170px;
+    min-height: 155px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 60px;
+
+    margin-left: auto;
+    margin-right: 20px;
+
+    color: #000000;
+}
+
+
+/* Icon menu */
+
+.blog-social-area > i {
+    font-size: 18px;
+}
+
+
+/* Danh sách icon mạng xã hội */
+
+.blog-social-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 25px;
+}
+
+.blog-social-icons a {
+    color: #000000;
+    font-size: 14px;
+
+    transition:
+        color 0.3s,
+        transform 0.3s;
+}
+
+.blog-social-icons a:hover {
+    color: #ffc500;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+        BLOG DETAIL CONTENT
+========================= */
+
+
+/* Khung nội dung màu trắng */
+
+.blog-detail-content {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 2fr)
+        minmax(240px, 1fr);
+
+    gap: 38px;
+
+    padding: 55px 38px;
+
+    background-color: #ffffff;
+    border-radius: 7px;
+
+    box-shadow: 0 2px 92px rgba(0, 0, 0, 0.07);
+}
+
+
+/* =========================
+        BLOG ARTICLE
+========================= */
+
+
+.blog-post-article {
+    min-width: 0;
+}
+
+
+/* Ảnh lớn của bài viết */
+
+.blog-post-image {
+    width: 100%;
+    height: 435px;
+
+    border-radius: 7px;
+
+    overflow: hidden;
+}
+
+.blog-post-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* Nội dung bài viết */
+
+.blog-post-body {
+    padding: 28px 5px 10px;
+}
+
+
+/* Thể loại bài viết */
+
+.blog-post-category {
+    color: #ffc500;
+
+    font-size: 13px;
+    font-weight: 500;
+}
+
+
+/* Tiêu đề bài viết */
+
+.blog-post-body h1 {
+    margin-top: 6px;
+
+    color: #000000;
+
+    font-size: 27px;
+    font-weight: 700;
+    line-height: 36px;
+}
+
+
+/* Ngày đăng và tác giả */
+
+.blog-post-meta {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 22px;
+
+    margin-top: 12px;
+
+    color: #aaaaaa;
+    font-size: 12px;
+}
+
+.blog-post-meta span {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+}
+
+.blog-post-meta i {
+    color: #ffc500;
+}
+
+
+/* Các đoạn văn */
+
+.blog-post-body p {
+    margin-top: 22px;
+
+    color: #777777;
+
+    font-size: 13px;
+    line-height: 24px;
+}
+
+
+/* =========================
+        RIGHT SIDEBAR
+========================= */
+
+
+.blog-post-sidebar {
+    min-width: 0;
+
+    padding-left: 38px;
+
+    border-left: 1px solid #eeeeee;
+}
+
+
+/* Tiêu đề Categories và Related Posts */
+
+.blog-post-sidebar .section-title h2 {
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 28px;
+}
+
+.blog-post-sidebar .section-title span {
+    height: 8px;
+}
+
+
+/* =========================
+        CATEGORIES
+========================= */
+
+
+.blog-categories ul {
+    margin-top: 25px;
+}
+
+.blog-categories li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: 45px;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+.blog-categories li a {
+    color: #222222;
+
+    font-size: 14px;
+
+    transition:
+        color 0.3s,
+        padding-left 0.3s;
+}
+
+.blog-categories li a:hover {
+    padding-left: 5px;
+
+    color: #ffc500;
+}
+
+.blog-categories li > span {
+    color: #999999;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+        RELATED POSTS
+========================= */
+
+
+.related-posts {
+    margin-top: 68px;
+}
+
+
+/* Một bài viết liên quan */
+
+.related-post {
+    padding: 25px 0;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+
+/* Thể loại và ngày đăng */
+
+.related-post-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    gap: 9px;
+
+    margin-bottom: 6px;
+
+    font-size: 12px;
+}
+
+.related-post-meta span {
+    color: #ffc500;
+}
+
+.related-post-meta time {
+    color: #aaaaaa;
+}
+
+
+/* Tiêu đề bài viết liên quan */
+
+.related-post > a {
+    display: block;
+
+    color: #222222;
+
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+
+    transition: color 0.3s;
+}
+
+.related-post > a:hover {
+    color: #ffc500;
+}
+
+/* Dịch Hire Me sang trái */
+
+.blog-detail-header .hire-btn {
+    transform: translateX(-170px) !important;
+}
+
+
+/* Dịch menu và social icon sang trái */
+
+.blog-social-area {
+    transform: translateX(-160px) !important;
+}
+
+
+/* =========================
+        FOOTER
+========================= */
+
+
+/* Footer của trang Blog cách nội dung 30px */
+
+.blog-detail-page .site-footer {
+    margin-top: 30px;
+}
+
+
