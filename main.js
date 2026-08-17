@@ -146,132 +146,147 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
+/* =========================
+        PORTFOLIO FILTER
+========================= */
 
-    /* =========================
-            PORTFOLIO FILTER
-    ========================= */
+const portfolioFilterButtons =
+    document.querySelectorAll(".portfolio-filter");
+
+const portfolioItems =
+    document.querySelectorAll(".portfolio-card");
+
+let isFilteringPortfolio = false;
 
 
-    const portfolioFilterButtons = document.querySelectorAll(".portfolio-filter");
+portfolioFilterButtons.forEach(function (button) {
 
-    const portfolioItems = document.querySelectorAll(".portfolio-card");
+    button.addEventListener("click", function () {
 
-    let isFilteringPortfolio = false;
+        if (isFilteringPortfolio) {
+            return;
+        }
+
+        isFilteringPortfolio = true;
+
+        const selectedCategory = button.dataset.filter;
 
 
-    portfolioFilterButtons.forEach(function (button) {
+        // Lưu vị trí CŨ của card đang hiện
+        const oldPositions = new Map();
 
-        button.addEventListener("click", function () {
+        portfolioItems.forEach(function (item) {
 
-            if (isFilteringPortfolio) {
-
-                return;
-
+            if (!item.hidden) {
+                oldPositions.set(item, item.getBoundingClientRect());
             }
-
-
-            isFilteringPortfolio = true;
-
-            const selectedCategory = button.dataset.filter;
-
-
-            portfolioFilterButtons.forEach(function (filterButton) {
-
-                filterButton.classList.remove("active");
-
-            });
-
-
-            button.classList.add("active");
-
-
-            portfolioItems.forEach(function (item) {
-
-                if (!item.hidden) {
-
-                    item.animate(
-                        [
-                            {
-                                opacity: 1,
-                                transform: "scale(1)"
-                            },
-                            {
-                                opacity: 0,
-                                transform: "scale(0.9)"
-                            }
-                        ],
-                        {
-                            duration: 200,
-                            easing: "ease",
-                            fill: "forwards"
-                        }
-                    );
-
-                }
-
-            });
-
-
-            setTimeout(function () {
-
-                let visibleItemIndex = 0;
-
-
-                portfolioItems.forEach(function (item) {
-
-                    const itemCategory = item.dataset.category;
-
-                    const shouldShow =
-                        selectedCategory === "all" ||
-                        selectedCategory === itemCategory;
-
-
-                    item.hidden = !shouldShow;
-
-
-                    if (shouldShow) {
-
-                        item.animate(
-                            [
-                                {
-                                    opacity: 0,
-                                    transform: "translateY(20px) scale(0.95)"
-                                },
-                                {
-                                    opacity: 1,
-                                    transform: "translateY(0) scale(1)"
-                                }
-                            ],
-                            {
-                                duration: 350,
-                                delay: visibleItemIndex * 70,
-                                easing: "ease-out",
-                                fill: "both"
-                            }
-                        );
-
-
-                        visibleItemIndex++;
-
-                    }
-
-                });
-
-
-                setTimeout(function () {
-
-                    isFilteringPortfolio = false;
-
-                }, 350 + visibleItemIndex * 70);
-
-            }, 200);
 
         });
 
+
+        // Đổi nút đang active
+        portfolioFilterButtons.forEach(function (filterButton) {
+            filterButton.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+
+        // Ẩn các card không đúng loại để Grid tự xếp lại
+        portfolioItems.forEach(function (item) {
+
+            const itemCategory = item.dataset.category;
+
+            const shouldShow =
+                selectedCategory === "all" ||
+                selectedCategory === itemCategory;
+
+            item.hidden = !shouldShow;
+
+        });
+
+
+        // Đưa card còn lại về vị trí cũ bằng transform
+        portfolioItems.forEach(function (item) {
+
+            if (item.hidden) {
+                return;
+            }
+
+            const oldPosition = oldPositions.get(item);
+
+            // Card trước đó bị ẩn, nay mới hiện
+            if (!oldPosition) {
+
+                item.animate(
+                    [
+                        {
+                            opacity: 0,
+                            transform: "scale(0.9)"
+                        },
+                        {
+                            opacity: 1,
+                            transform: "scale(1)"
+                        }
+                    ],
+                    {
+                        duration: 500,
+                        easing: "ease-out"
+                    }
+                );
+
+                return;
+            }
+
+            const newPosition = item.getBoundingClientRect();
+
+            const moveX = oldPosition.left - newPosition.left;
+            const moveY = oldPosition.top - newPosition.top;
+
+            item.style.transition = "none";
+            item.style.transform = `translate(${moveX}px, ${moveY}px)`;
+
+        });
+
+
+        // Kéo card từ vị trí cũ về vị trí mới
+        requestAnimationFrame(function () {
+
+            requestAnimationFrame(function () {
+
+                portfolioItems.forEach(function (item) {
+
+                    if (item.hidden) {
+                        return;
+                    }
+
+                    item.style.transition =
+                        "transform 1s cubic-bezier(0.22, 1, 0.36, 1)";
+
+                    item.style.transform = "translate(0, 0)";
+
+                });
+
+            });
+
+        });
+
+
+        // Mở lại nút lọc sau khi hiệu ứng hoàn tất
+        setTimeout(function () {
+
+            portfolioItems.forEach(function (item) {
+                item.style.transition = "";
+                item.style.transform = "";
+            });
+
+            isFilteringPortfolio = false;
+
+        }, 1850);
+
     });
 
-
-
+});
     /* =========================
             PORTFOLIO POPUP
     ========================= */
