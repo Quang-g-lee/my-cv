@@ -1755,3 +1755,669 @@ a {
     text-align: right;
 }
 
+
+/* =========================================
+                RESPONSIVE
+========================================= */
+
+
+/* =========================================
+    LAPTOP: màn hình từ 1366px trở xuống
+========================================= */
+
+@media (max-width: 1366px) {
+
+    .container {
+        width: calc(100% - 50px);
+        gap: 25px;
+    }
+
+    .sidebar {
+        flex-basis: 280px;
+    }
+
+    .nav-link {
+        padding: 0 8px;
+
+        font-size: 13px;
+    }
+
+    .hire-btn {
+        margin-right: 12px;
+    }
+
+    .service-list,
+    .portfolio-list {
+        gap: 20px;
+    }
+
+    .testimonial-page {
+        gap: 20px;
+    }
+}
+
+
+/* =========================================
+    TABLET: màn hình từ 991px trở xuống
+========================================= */
+
+@media (max-width: 991px) {
+
+    /* BỐ CỤC CHUNG */
+
+    .container {
+        width: calc(100% - 40px);
+
+        flex-direction: column;
+        gap: 25px;
+
+        margin-top: 30px;
+    }
+
+    .sidebar {
+        flex: none;
+        width: 100%;
+    }
+
+    .main-content {
+        width: 100%;
+    }
+
+
+    /* SIDEBAR */
+
+    .profile-image img {
+        max-height: 520px;
+
+        object-fit: cover;
+        object-position: center top;
+    }
+
+
+    /* HEADER */
+
+    .nav-link {
+        padding: 0 7px;
+
+        font-size: 12px;
+    }
+
+    .home-link {
+        width: 60px;
+    }
+
+    .hire-btn {
+        margin-right: 10px;
+    }
+
+
+    /* HOME */
+
+    /* Services: 4 cột thành 2 cột */
+
+    .service-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+
+    /* RESUME */
+
+    /* Working History và Education History
+       vẫn giữ 2 cột trên tablet */
+
+    .resume-columns {
+        gap: 20px;
+    }
+
+    .history-column {
+        padding-right: 20px;
+    }
+
+    .history-column + .history-column {
+        padding-left: 20px;
+    }
+
+    /* Clients: 4 cột thành 2 cột */
+
+    .client-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+    /* Testimonials: 3 cột thành 2 cột */
+
+    .testimonial-page {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+
+    /* PORTFOLIO */
+
+    .portfolio-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+
+    /* BLOG */
+
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    /* CONTACT */
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .contact-form {
+        padding-right: 0;
+
+        border-right: 0;
+    }
+
+    .contact-info {
+        padding-left: 0;
+    }
+}
+
+
+/* =========================================
+    MOBILE: màn hình từ 600px trở xuống
+========================================= */
+
+@media (max-width: 600px) {
+
+    /* =========================
+        BỐ CỤC CHUNG
+    ========================= */
+
+    .container {
+        width: calc(100% - 24px);
+
+        gap: 20px;
+
+        margin-top: 12px;
+    }
+
+    .content {
+        min-height: auto;
+
+        margin-top: 20px;
+        padding: 8px;
+    }
+
+
+    /* =========================
+                SIDEBAR
+    ========================= */
+
+    .profile-name {
+        padding: 18px;
+    }
+
+    .profile-name .name {
+        font-size: 16px;
+    }
+
+    .profile-image {
+        margin-top: -12px;
+    }
+
+    .profile-image img {
+        width: 100%;
+        max-height: 430px;
+
+        object-fit: cover;
+        object-position: center top;
+    }
+
+    .profile-information {
+        margin-left: 30px;
+    }
+
+    .profile-information li {
+        padding-left: 18px;
+    }
+
+    .download-btn {
+        margin-bottom: 25px;
+    }
+
+
+    /* =========================
+                HEADER
+    ========================= */
+
+    .header {
+        height: auto;
+    }
+
+    .navbar {
+        display: block;
+    }
+
+    .nav-list {
+        width: 100%;
+
+        display: grid;
+        grid-template-columns: 48px repeat(4, 1fr);
+    }
+
+    .nav-list li {
+        width: 100%;
+    }
+
+    .nav-link {
+        width: 100%;
+
+        justify-content: center;
+
+        padding: 14px 3px;
+
+        font-size: 10px;
+    }
+
+    .home-link {
+        width: 100%;
+        height: auto;
+
+        margin-right: 0;
+
+        border-radius: 6px 0 0 0;
+
+        font-size: 17px;
+    }
+
+    .hire-btn {
+        width: max-content;
+
+        margin: 10px 12px 10px auto;
+        padding-left: 14px;
+
+        font-size: 12px;
+    }
+
+    .hire-icon {
+        width: 23px;
+        height: 23px;
+
+        margin-left: 10px;
+    }
+
+
+    /* =========================
+        TIÊU ĐỀ VÀ NỘI DUNG CHUNG
+    ========================= */
+
+    .section-title h2 {
+        font-size: 17px;
+    }
+
+    .about-me,
+    .services,
+    .resume,
+    .portfolio {
+        padding: 25px 18px;
+    }
+
+
+    /* =========================
+        HOME - ABOUT ME
+    ========================= */
+
+    .about-text {
+        margin-top: 20px;
+
+        font-size: 13px;
+        line-height: 22px;
+    }
+
+
+    /* =========================
+        HOME - SERVICES
+    ========================= */
+
+    .services .section-title {
+        margin-bottom: 30px;
+    }
+
+    .service-list {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .service-card {
+        min-height: auto;
+    }
+
+
+    /* =========================
+        HOME - SKILLS
+    ========================= */
+
+    .skills {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-column {
+        padding: 35px 18px;
+    }
+
+    .skill-column:first-child {
+        border-right: 0;
+        border-bottom: 1px solid #efefef;
+    }
+
+    .skill-column .section-title {
+        margin-bottom: 30px;
+    }
+
+
+    /* =========================
+        RESUME
+    ========================= */
+
+    .resume > .section-title {
+        margin-bottom: 25px;
+    }
+
+    .resume-columns {
+        display: block;
+    }
+
+    .history-column {
+        width: 100%;
+
+        padding-right: 0;
+    }
+
+    .history-column + .history-column {
+        margin-top: 45px;
+        padding-left: 0;
+
+        border-left: 0;
+    }
+
+    .history-heading {
+        margin-bottom: 25px;
+    }
+
+    .history-icon {
+        flex-basis: 45px;
+
+        width: 45px;
+        height: 45px;
+
+        margin-right: 15px;
+    }
+
+    .history-heading h2 {
+        font-size: 16px;
+    }
+
+    .timeline {
+        margin-left: 22px;
+    }
+
+    .timeline li {
+        padding: 0 0 30px 28px;
+    }
+
+    .timeline h3 {
+        font-size: 14px;
+    }
+
+
+    /* =========================
+        RESUME - CLIENTS
+    ========================= */
+
+    .clients {
+        padding: 35px 18px;
+    }
+
+    .client-list {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .client-card {
+        min-height: 100px;
+    }
+
+
+    /* =========================
+        RESUME - TESTIMONIALS
+    ========================= */
+
+    .testimonials {
+        padding: 35px 18px 25px;
+    }
+
+    .testimonial-page {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .testimonial-card {
+        padding: 18px;
+    }
+
+
+    /* =========================
+        PORTFOLIO
+    ========================= */
+
+    .portfolio-filters {
+        gap: 12px;
+
+        margin: 20px 0 25px;
+    }
+
+    .portfolio-filter {
+        font-size: 11px;
+    }
+
+    .portfolio-list {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .portfolio-card img {
+        width: 100%;
+    }
+
+
+    /* Portfolio popup */
+
+    .portfolio-lightbox-content {
+        width: calc(100% - 40px);
+        max-width: 100%;
+    }
+
+    .portfolio-lightbox-content img,
+    .portfolio-lightbox-content iframe {
+        max-width: 100%;
+    }
+
+    .portfolio-lightbox-content iframe {
+        height: 240px;
+    }
+
+    .portfolio-lightbox-control {
+        width: 35px;
+        height: 35px;
+
+        font-size: 14px;
+    }
+
+    .portfolio-lightbox-previous {
+        left: 5px;
+    }
+
+    .portfolio-lightbox-next {
+        right: 5px;
+    }
+
+
+    /* =========================
+        BLOG
+    ========================= */
+
+    .blog-header {
+        padding: 25px 18px 10px;
+    }
+
+    .blog-grid {
+        grid-template-columns: 1fr;
+
+        padding: 15px 18px 25px;
+    }
+
+    .blog-card img {
+        width: 100%;
+        height: 190px;
+
+        object-fit: cover;
+    }
+
+
+    /* =========================
+        CONTACT
+    ========================= */
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+
+        padding: 25px 18px;
+    }
+
+    .contact-form,
+    .contact-info {
+        padding: 0;
+
+        border-right: 0;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .form-row input:first-child {
+        margin-bottom: 24px;
+    }
+
+    .site-form input,
+    .site-form textarea {
+        width: 100%;
+    }
+
+    .contact-social {
+        flex-wrap: wrap;
+    }
+
+    .contact-map {
+        padding: 0 18px 25px;
+    }
+
+    .contact-map iframe {
+        width: 100%;
+        height: 260px;
+    }
+
+
+    /* =========================
+        FOOTER
+    ========================= */
+
+    .site-footer {
+        height: auto;
+
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+
+        padding: 18px;
+    }
+
+    .footer-name,
+    .footer-copyright {
+        width: 100%;
+
+        text-align: center;
+    }
+
+
+    /* =========================
+        MODAL LOADING
+    ========================= */
+
+    .portfolio-loading-header {
+        padding: 10px 15px;
+    }
+
+    .portfolio-loading-body {
+        padding: 20px;
+    }
+}
+
+
+/* =========================================
+    MOBILE NHỎ: từ 400px trở xuống
+========================================= */
+
+@media (max-width: 400px) {
+
+    .container {
+        width: calc(100% - 16px);
+    }
+
+    .nav-list {
+        grid-template-columns: 42px repeat(4, 1fr);
+    }
+
+    .nav-link {
+        padding: 13px 1px;
+
+        font-size: 9px;
+    }
+
+    .home-link {
+        font-size: 15px;
+    }
+
+    .about-me,
+    .services,
+    .resume,
+    .portfolio {
+        padding-right: 14px;
+        padding-left: 14px;
+    }
+
+    .skill-column,
+    .clients,
+    .testimonials {
+        padding-right: 14px;
+        padding-left: 14px;
+    }
+
+    .timeline li {
+        padding-left: 24px;
+    }
+
+    .history-heading h2 {
+        font-size: 15px;
+    }
+
+    .footer-copyright {
+        font-size: 11px;
+    }
+}
